@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+    <style>
+
+        body{
+            background-color: rgb(163, 163, 163);
+        }
+
+        .dv{
+
+            margin-left: 500px;
+            margin-right: 500px;
+
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+    <div class="dv">
+
+    <h1 style="margin-top : 50px;" class="ui center aligned header">Todo App</h1>
+
+    <form class="ui form" action="/add" method="post">
+
+     <div>
+        <label for="title"><h2>Todo Title</h2></label>
+        <input type="text" name="title" placeholder="Enter Todo...">
+        <br>
+        <button type="submit">Add</button>
+     </div>
+
+    </form>
+
+    {% for todo in todo_list %}
+
+    <div class="ui segment">
+
+    
+
+        <p class="ui bog header"> {{ todo.id }} | {{ todo.title }}</p>
+
+        {% if todo.complete == False %}
+              <span class="ui gray label">Not complete</span>
+
+        {% else %}
+               <span class="ui green label"> Completed</span>
+        {% endif %}
+
+        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+
+    </div>
+
+    {% endfor%}
+
+
+</div>
+    
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="base.css"> 
+    <title>Document</title>
+
+    <style>
+
+html,
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(28, 226, 170, 0.74);
+}
+
+#wrapper{
+
+    background-color: rgb(30, 31, 50);
+    height:370px;
+    width: 400px;
+    border-radius: 5%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+#wrapper h2{
+    padding-left: 35%;
+    padding-top: 5%;
+    color: bisque;
+}
+
+#wrapper input{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#ulist{
+    color: aliceblue;
+    margin-left: 10%;
+}
+
+li:hover{
+    font-size: 17.5px;
+    color: rgba(235, 51, 177, 0.74);
+}
+
+#demo{
+    color: white;
+}
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+         <h2>Todo List</h2>
+        <input type="text" name="" id="input">
+        <button id="btn">ADD</button>
+    
+        <div id="todolist">
+    
+    
+    
+        </div>
+    </div>
+
+
+<script>
+
+let button = document.getElementById('btn');
+let inp = document.getElementById('input');
+let todolist = document.getElementById('todolist');
+
+var list = [];
+
+button.addEventListener('click',()=>{
+
+   // window.alert(inp.value)
+
+   let ul = document.createElement('ul');
+   let li = document.createElement('li');
+   li.innerText = inp.value;
+   inp.value = ' ';
+   ul.appendChild(li);
+   ul.setAttribute("id","ulist");
+   todolist.appendChild(ul);
+   
+   li.setAttribute("onclick","clk()");
+});
+
+function clk(){
+
+    li.remove();
+}
+
+</script>
+
+
+    
+</body>
+</html>
+
+
+ -->

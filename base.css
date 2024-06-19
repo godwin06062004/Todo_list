@@ -1,0 +1,43 @@
+html,
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(28, 226, 170, 0.74);
+}
+
+#wrapper{
+
+    background-color: rgb(30, 31, 50);
+    height:370px;
+    width: 400px;
+    border-radius: 5%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+#wrapper h2{
+    padding-left: 35%;
+    padding-top: 5%;
+    color: bisque;
+}
+
+#wrapper input{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#ulist{
+    color: aliceblue;
+    margin-left: 10%;
+}
+
+li:hover{
+    font-size: 17.5px;
+    color: rgba(235, 51, 177, 0.74);
+}
+
+#demo{
+    color: white;
+}
